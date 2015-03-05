@@ -12,9 +12,9 @@
 class SiteClassTestsTest extends \Codeception\TestCase\Test
 {
    /**
-    * @var \CodeGuy
+    * @var \UnitTester
     */
-    protected $codeGuy;
+    protected $unitTester;
 
     private $config         = FALSE;
     private $site           = FALSE;

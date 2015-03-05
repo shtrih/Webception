@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-$I = new WebGuy($scenario);
+$I = new AcceptanceTester($scenario);
 $I->wantTo('run a passing test');
 $I->sendGET('run/acceptance/'. md5('acceptance' . 'TheTestThatPasses'));
 $I->seeResponseContainsJson(array(

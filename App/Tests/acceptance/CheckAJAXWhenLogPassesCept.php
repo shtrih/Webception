@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-$I = new WebGuy($scenario);
+$I = new AcceptanceTester($scenario);
 $I->wantTo('check AJAX call when the Codeception log check passes.');
 $I->sendGET('logs?test=pass');
 $I->seeResponseContainsJson(array(

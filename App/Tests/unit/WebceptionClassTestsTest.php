@@ -12,9 +12,9 @@
 class WebceptionClassTestsTest extends \Codeception\TestCase\Test
 {
    /**
-    * @var \CodeGuy
+    * @var \UnitTester
     */
-    protected $codeGuy;
+    protected $unitTester;
 
     /**
      * Test Object
