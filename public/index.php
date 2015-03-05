@@ -5,7 +5,7 @@
  *
  * @package  Webception
  * @license  MIT
- * @version  0.1.0
+ * @version  0.2.0
  * @link     https://github.com/jayhealey/webception
  * @author   James Healey <jayhealey@gmail.com>
  */
@@ -39,7 +39,7 @@ $app = new \Slim\Slim(array(
     */
 
     'webception' => array(
-        'version'    => '0.1.0',
+        'version'    => '0.2.0',
         'name'       => '<strong>Web</strong>ception',
         'repo'       => 'https://github.com/jayhealey/webception',
         'twitter'    => '@WebceptionApp',
