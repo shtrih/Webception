@@ -2,6 +2,12 @@
 
 return array(
 
+    /**
+     * Add param --debug to Codeception on execute
+     * @link http://codeception.com/docs/reference/Commands#Run
+     */
+    'debug'  => false,
+
     /*
     |--------------------------------------------------------------------------
     | Codeception Configurations
@@ -30,7 +36,7 @@ return array(
     | Codeception Executable
     |--------------------------------------------------------------------------
     |
-    | Codeception is installed as a dependancy of Webception via Composer.
+    | Codeception is installed as a dependency of Webception via Composer.
     |
     | You might need to set 'sudo chmod a+x vendor/bin/codecept' to allow Apache
     | to execute the Codeception executable.

@@ -255,6 +255,7 @@ class Codeception
             $this->config['executable'],        // Codeception Executable
             "run",                              // Command to Codeception
             "--no-colors",                      // Forcing Codeception to not use colors, if enabled in codeception.yml
+            $this->config['debug'] ? "--debug" : "",
             "--config=\"{$this->site->getConfig()}\"", // Full path & file of Codeception
             $type,                              // Test Type (Acceptance, Unit, Functional)
             $filename,                          // Filename of the Codeception test
