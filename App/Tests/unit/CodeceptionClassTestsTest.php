@@ -12,9 +12,9 @@
 class CodeceptionClassTestsTest extends \Codeception\TestCase\Test
 {
    /**
-    * @var \CodeGuy
+    * @var \UnitTester
     */
-    protected $codeGuy;
+    protected $unitTester;
 
     private $codeception = FALSE;
     private $config      = FALSE;

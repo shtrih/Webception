@@ -58,9 +58,9 @@ return array(
     */
 
     'ignore' => array(
-        'WebGuy.php',
-        'TestGuy.php',
-        'CodeGuy.php',
+        'AcceptanceTester.php',
+        'FunctionalTester.php',
+        'UnitTester.php',
         '_bootstrap.php',
         '.DS_Store',
     ),

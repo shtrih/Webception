@@ -17,5 +17,5 @@
 if (isset($_SERVER['TERM_PROGRAM']) || isset($_SERVER['TERM']))
     $scenario->skip();
 
-$I = new WebGuy($scenario);
+$I = new AcceptanceTester($scenario);
 $I->wantTo('do nothing and pass!');

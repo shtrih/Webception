@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-$I = new WebGuy($scenario);
+$I = new AcceptanceTester($scenario);
 $I->wantTo('run test that does not exist to confirm the response');
 $I->sendGET('run/lol/fake-test-id');
 $I->seeResponseContainsJson(array(
