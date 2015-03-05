@@ -2,3 +2,6 @@ composer.phar
 vendor
 package/codecept.phar
 .idea
+atlassian-ide-plugin.xml
+*.*.iml
+*.iml
