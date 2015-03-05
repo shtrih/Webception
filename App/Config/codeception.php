@@ -8,6 +8,11 @@ return array(
      */
     'debug'  => false,
 
+    /**
+     * Use colors in Webception Console Results
+     */
+    'colors' => false,
+
     /*
     |--------------------------------------------------------------------------
     | Codeception Configurations

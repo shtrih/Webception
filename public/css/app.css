@@ -1,1 +1,2 @@
 .console { height: 350px; overflow: scroll;}
+.console .pre { font-family: 'Courier New', Courier, Consolas, monospace; white-space: pre; }

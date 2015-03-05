@@ -298,7 +298,8 @@ class Test
             }
 
             // Filter the line of any junk and add to the log.
-            $this->log[] = $this->filterLog($line);
+            // $this->log[] = $this->filterLog($line);
+            $this->log[] = $line;
         }
     }
 

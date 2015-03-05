@@ -254,8 +254,8 @@ class Codeception
         $params = array(
             $this->config['executable'],        // Codeception Executable
             "run",                              // Command to Codeception
-            "--no-colors",                      // Forcing Codeception to not use colors, if enabled in codeception.yml
             $this->config['debug'] ? "--debug" : "",
+            "--" . ($this->config['colors'] ? "" : "no-") . "colors",
             "--config=\"{$this->site->getConfig()}\"", // Full path & file of Codeception
             $type,                              // Test Type (Acceptance, Unit, Functional)
             $filename,                          // Filename of the Codeception test
@@ -292,16 +292,26 @@ class Codeception
         if (! $test = $this->getTest($type, $hash))
             $response['message'] = 'The test could not be found.';
 
+        if ($this->config['colors'] && !class_exists('\SensioLabs\AnsiConverter\AnsiToHtmlConverter'))
+            $response['message'] = 'AnsiConverter library not installed. Please add `sensiolabs/ansi-to-html` to composer.json';
+
         // If there's no error message set yet, it means we're good to go!
         if (is_null($response['message'])) {
 
             // Run the test!
             $test               = $this->run($test);
             $response['run']    = $test->ran();
-            $response['log']    = $test->getLog();
             $response['passed'] = $test->passed();
             $response['state']  = $test->getState();
             $response['title']  = $test->getTitle();
+
+            if ($this->config['colors']) {
+                $converter = new \SensioLabs\AnsiConverter\AnsiToHtmlConverter(new \Shtrih\AnsiConverter\Theme\ConsoleLightTheme());
+                $response['log'] = $converter->convert($test->getLog());
+            }
+            else {
+                $response['log'] = $test->getLog();
+            }
         }
 
         return $response;
