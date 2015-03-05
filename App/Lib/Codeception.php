@@ -130,8 +130,14 @@ class Codeception
             if (! $active)
                 break;
 
+            $test_suit_path = "{$this->config['paths']['tests']}/{$type}/";
+            // Suites at different sites may be different, but the list of suites is common to all sites.
+            //      so skip nonexistent
+            if (! is_dir($test_suit_path))
+                break;
+
             $files = new \RecursiveIteratorIterator(
-                new \RecursiveDirectoryIterator("{$this->config['paths']['tests']}/{$type}/", \FilesystemIterator::SKIP_DOTS),
+                new \RecursiveDirectoryIterator($test_suit_path, \FilesystemIterator::SKIP_DOTS),
                 \RecursiveIteratorIterator::SELF_FIRST
             );
 
