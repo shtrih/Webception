@@ -559,7 +559,8 @@ APP = {
                 APP.state.refresh('running');
                 APP.test.run(tests);
             } else {
-                APP.state.showError('Please select some tests to run.');
+                //APP.state.showError('Please select some tests to run.');
+                alert('Please select some tests to run.');
             }
         },
 
