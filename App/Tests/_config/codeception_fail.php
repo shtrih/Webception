@@ -14,6 +14,17 @@
 
 return array(
 
+    /**
+     * Add param --debug to Codeception on execute
+     * @link http://codeception.com/docs/reference/Commands#Run
+     */
+    'debug'  => false,
+
+    /**
+     * Use colors in Webception Console Results
+     */
+    'colors' => false,
+
     'sites' => array(),
     'location' => __FILE__
 
