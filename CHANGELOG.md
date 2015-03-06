@@ -1,3 +1,8 @@
+## 0.2.1
+
+- Fixed: js syntax error when no test selected.
+- Added ajax test runner error handler.
+
 ## 0.2.0
 
 - Codeception v2.0.11 support.
