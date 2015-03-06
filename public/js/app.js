@@ -465,7 +465,19 @@ APP = {
 
                         // Carry on running the tests...
                         APP.test.run(tests);
-                    }
+                    },
+                    error: function(xhr, status, message)
+                    {
+                        $(APP.codeception.vars.eHideOnError).hide();
+                        $(APP.codeception.vars.eErrorConfig).closest('ul').hide().prev().hide();
+                        $(APP.codeception.vars.eErrorMessage).html(status + ': ' + message);
+                        if (xhr.responseJSON.message)
+                            $(APP.codeception.vars.eErrorResource).html(xhr.responseJSON.message);
+                        else
+                            $(APP.codeception.vars.eErrorResource).closest('ul').hide();
+
+                        $(APP.codeception.vars.eErrorContainer).show();
+					}
                 });
 
             } else if (APP.state.isStopped()) {
